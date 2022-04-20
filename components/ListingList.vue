@@ -215,6 +215,10 @@ export default {
             flex-direction: row;
             align-items: center;
             gap: 0.5rem;
+
+            &:first-of-type {
+              margin-right: 1.5rem;
+            }
           }
 
           // &::before {
