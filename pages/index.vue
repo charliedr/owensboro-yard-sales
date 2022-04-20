@@ -125,14 +125,14 @@ export default {
 
   .content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    &__featured,
     &__list {
-      width: 65%;
+      width: 100%;
       max-width: 800px;
-      align-self: flex-start;
+      align-self: center;
     }
   }
 }
