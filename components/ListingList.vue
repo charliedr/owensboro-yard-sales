@@ -114,7 +114,6 @@ export default {
       // Filters listings if the value of the button equals the listing's category
       // Eventually allow users to select multiple categories
       const filtered = this.listings.filter((listing) =>
-        // Eventually add RegEx to highlight filtered category
         listing.category.includes(e.target.value)
       );
       this.filteredList = filtered;
@@ -145,6 +144,7 @@ export default {
       font-size: 14px;
       padding: 0.25rem 0.75rem;
       background: #ffffff;
+      color: #080808;
       border: 1px solid rgba(0, 0, 0, 0.14);
       margin-bottom: 0.5rem;
       border-radius: 0.75rem;
