@@ -5,7 +5,7 @@ export const state = () => ({
       date: "June 01",
       time: "7am - 2pm",
       address: "P. Sherman, 42 Wallaby Way",
-      category: "Electronics, Toys",
+      category: "Electronics, Toys, Holiday Items, Trading Cards, Clothing, Pet Supplies",
       directionsLink: "https://google.com",
       description:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",

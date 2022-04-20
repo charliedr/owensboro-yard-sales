@@ -224,7 +224,7 @@ export default {
         }
 
         &-category {
-          font-size: 0.85rem;
+          font-size: .85rem;
           font-weight: 500;
           font-style: italic;
           line-height: 1rem;
@@ -233,7 +233,7 @@ export default {
         }
 
         &-desc {
-          font-size: 0.85rem;
+          font-size: 1rem;
           font-weight: 500;
           color: #080808;
         }
@@ -243,7 +243,7 @@ export default {
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
 
         a {
           margin-right: 1rem;
