@@ -23,6 +23,7 @@
         <div class="listingList__item">
           <div>
             <div class="listingList__item--content-date">
+              <img src="~/static/icon-calendar.svg" />
               {{ listing.date }}
             </div>
             <div class="listingList__item--content-title">
@@ -55,7 +56,14 @@
         <div class="listingList__item">
           <div class="listingList__item--content">
             <div class="listingList__item--content-date">
-              {{ listing.date }}
+              <div>
+                <img src="~/static/icon-calendar.svg" />
+                {{ listing.date }}
+              </div>
+              <div>
+                <img src="~/static/icon-clock.svg" />
+                {{ listing.time }}
+              </div>
             </div>
             <div class="listingList__item--content-title">
               {{ listing.address }}
@@ -185,14 +193,27 @@ export default {
         justify-content: center;
 
         &-date {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+          justify-content: space-between;
+          // gap: 1.5rem;
           font-size: 1rem;
           font-weight: 500;
           color: #080808;
-          margin-bottom: .5rem;
+          margin-bottom: 1rem;
 
-          &::before {
-            content: '[icon]';
+          > div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: .5rem;
           }
+
+          // &::before {
+          //   content: '[icon]';
+          // }
         }
 
         &-title {
