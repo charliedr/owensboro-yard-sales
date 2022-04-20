@@ -1,5 +1,5 @@
 export const state = () => ({
-  // ALL LISTINGS
+  // Manually adding these for now, will eventually connect to Google Sheets API to pull in Google Forms submissions
   listings: [
     {
       date: "June 01",
@@ -12,7 +12,7 @@ export const state = () => ({
     },
     {
       date: "June 03",
-      time: "7am - 2pm",
+      time: "9am - 4pm",
       address: "address 2",
       category: "Toys, Video Games",
       directionsLink: "https://google.com",
@@ -21,7 +21,7 @@ export const state = () => ({
     },
     {
       date: "June 05",
-      time: "7am - 2pm",
+      time: "6am - 1pm",
       address: "address 3",
       category: "Clothing, Holiday Items",
       directionsLink: "https://google.com",
@@ -30,7 +30,7 @@ export const state = () => ({
     },
     {
       date: "June 07",
-      time: "7am - 2pm",
+      time: "11am - 4pm",
       address: "address 4",
       category: "Pet Supplies",
       directionsLink: "https://google.com",
@@ -39,7 +39,7 @@ export const state = () => ({
     },
     {
       date: "June 11",
-      time: "7am - 2pm",
+      time: "12pm - 5:30pm",
       address: "address 6",
       category: "Trading Cards",
       directionsLink: "https://google.com",
@@ -48,7 +48,7 @@ export const state = () => ({
     },
     {
       date: "June 13",
-      time: "7am - 2pm",
+      time: "9am - 5pm",
       address: "address 7",
       category: "Video Games",
       directionsLink: "https://google.com",
@@ -57,7 +57,7 @@ export const state = () => ({
     },
     {
       date: "June 15",
-      time: "7am - 2pm",
+      time: "5am - 11am",
       address: "address 8",
       category: "Holiday Items",
       directionsLink: "https://google.com",
@@ -66,7 +66,7 @@ export const state = () => ({
     },
     {
       date: "September 09",
-      time: "7am - 2pm",
+      time: "7:30am - 2pm",
       address: "address 5",
       category: "Collectibles, Trading Cards",
       directionsLink: "https://google.com",

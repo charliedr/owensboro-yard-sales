@@ -23,8 +23,14 @@
         <div class="listingList__item">
           <div>
             <div class="listingList__item--content-date">
-              <img src="~/static/icon-calendar.svg" />
-              {{ listing.date }}
+              <div>
+                <img src="~/static/icon-calendar.svg" />
+                {{ listing.date }}
+              </div>
+              <div>
+                <img src="~/static/icon-clock.svg" />
+                {{ listing.time }}
+              </div>
             </div>
             <div class="listingList__item--content-title">
               {{ listing.address }}
@@ -161,7 +167,7 @@ export default {
     li {
       background: #fafafa;
       border-radius: 1rem;
-      box-shadow: 0 .5rem .75rem rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.1);
     }
 
     li:nth-of-type(even) {
@@ -175,7 +181,7 @@ export default {
       display: flex;
       flex-direction: column;
       margin-bottom: 1rem;
-      
+
       padding: 1rem;
       text-decoration: none;
       border-bottom: 1px solid rgba(8, 8, 8, 0.1);
@@ -208,7 +214,7 @@ export default {
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: .5rem;
+            gap: 0.5rem;
           }
 
           // &::before {
@@ -224,7 +230,7 @@ export default {
         }
 
         &-category {
-          font-size: .85rem;
+          font-size: 0.85rem;
           font-weight: 500;
           font-style: italic;
           line-height: 1rem;
@@ -249,16 +255,16 @@ export default {
           margin-right: 1rem;
           border-radius: 0.75rem;
           padding: 0.75rem 1rem;
-        
         }
 
         .btn-view {
           background: #1d3557;
           color: #fff;
           border: none;
-          
-          &:focus, &:hover {
-            background: rgba(29, 54, 88, .85);
+
+          &:focus,
+          &:hover {
+            background: rgba(29, 54, 88, 0.85);
           }
         }
 
@@ -266,9 +272,10 @@ export default {
           background: transparent;
           color: #080808;
           border: 1px solid #080808;
-          
-          &:focus, &:hover {
-            background: rgba(8, 8, 8, .05);
+
+          &:focus,
+          &:hover {
+            background: rgba(8, 8, 8, 0.05);
           }
         }
       }
