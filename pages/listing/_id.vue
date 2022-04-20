@@ -118,10 +118,12 @@ export default {
   padding: 1.5rem 1rem;
 
   .date-time {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    // display: flex;
+    // flex-direction: row;
+    // align-items: center;
+    // justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
     margin-bottom: 1.5rem;
   }
