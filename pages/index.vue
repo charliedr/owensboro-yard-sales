@@ -69,7 +69,7 @@ export default {
   margin: 2rem 1rem;
   border-radius: 1rem;
   padding: 2rem 1rem;
-  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.1);
 
   &__title {
     font-size: 1.35rem;

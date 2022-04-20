@@ -161,7 +161,7 @@ export default {
     li {
       background: #fafafa;
       border-radius: 1rem;
-      box-shadow: 0 .5rem .5rem rgba(0, 0, 0, 0.15);
+      box-shadow: 0 .5rem .75rem rgba(0, 0, 0, 0.1);
     }
 
     li:nth-of-type(even) {
