@@ -64,7 +64,7 @@ export default {
     this.description = currentListing[0].description;
     this.directionsLink = currentListing[0].directionsLink;
 
-    console.log(this.$route.params.id);
+    // console.log(this.$route.params.id);
   },
 };
 </script>

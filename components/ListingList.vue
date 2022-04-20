@@ -112,8 +112,9 @@ export default {
     filterListings(e) {
       // console.log("Filtering for:", e.target.value);
       // Filters listings if the value of the button equals the listing's category
+      // Eventually allow users to select multiple categories
       const filtered = this.listings.filter((listing) =>
-        // *** Eventually add RegEx to highlight filtered category
+        // Eventually add RegEx to highlight filtered category
         listing.category.includes(e.target.value)
       );
       this.filteredList = filtered;
@@ -208,7 +209,7 @@ export default {
           font-size: 1rem;
           font-weight: 500;
           color: #080808;
-          margin-bottom: 1rem;
+          margin-bottom: 1.5rem;
 
           > div {
             display: flex;
@@ -254,12 +255,17 @@ export default {
         flex-direction: row;
         align-items: center;
         margin-top: 1.5rem;
+        width: 100%;
 
         a {
-          margin-right: 1rem;
           border-radius: 0.75rem;
           padding: 0.75rem 1rem;
           font-weight: 600;
+          width: 50%;
+          
+          &:first-of-type {
+            margin-right: 1rem;
+          }
         }
 
         .btn-view {
