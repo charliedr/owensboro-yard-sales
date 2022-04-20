@@ -203,8 +203,8 @@ export default {
           display: flex;
           flex-direction: row;
           align-items: center;
-          width: 100%;
           justify-content: space-between;
+          width: 100%;
           // gap: 1.5rem;
           font-size: 1rem;
           font-weight: 500;
