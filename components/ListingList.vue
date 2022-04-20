@@ -17,7 +17,7 @@
       </button>
     </div>
     <!-- <p>{{ filteredList }}</p> -->
-    <!-- FILTERED LISTING -->
+    <!-- FILTERED LISTING(S) -->
     <ul v-if="filteredListVisible">
       <li v-for="listing in filteredList" :key="listing.address">
         <div class="listingList__item">
@@ -110,7 +110,7 @@ export default {
   },
   methods: {
     filterListings(e) {
-      console.log("Filtering for:", e.target.value);
+      // console.log("Filtering for:", e.target.value);
       // Filters listings if the value of the button equals the listing's category
       const filtered = this.listings.filter((listing) =>
         // *** Eventually add RegEx to highlight filtered category
