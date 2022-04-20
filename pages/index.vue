@@ -1,18 +1,18 @@
 <template>
   <div>
     <section class="hero">
-      <div class="hero__wrapper container">
+      <div class="hero__wrapper">
         <h1 class="hero__wrapper--title">home page yeet</h1>
         <span>Shift + Alt + F</span>
       </div>
     </section>
-    <section class="cta-section container">
+    <section class="cta-section">
       <h2 class="cta-section__title">
         <span>Have a yard sale coming up?</span><br><span>Post it here!</span>
       </h2>
       <a class="cta-section__button" href="https://google.com" target="_blank">Submit Your Listing</a>
     </section>
-    <div class="content container">
+    <div class="content">
       <h1 class="content__title">Upcoming Yard Sales</h1>
       <ListingList class="content__list" />
     </div>

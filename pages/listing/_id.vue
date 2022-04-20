@@ -1,11 +1,29 @@
 <template>
   <div>
-    <section>
+    <section class="hero">
+      <div class="hero__wrapper">
+        <h1 class="hero__wrapper--title">{{ address }}</h1>
+      </div>
+    </section>
+    <section class="listing">
       <!-- address + Description -->
-      <h1 class="listing__content--date">{{ date }}</h1>
-      <h1 class="listing__content--address">{{ address }}</h1>
-      <span class="listing__content--category">{{ category }}</span>
+      <div class="date-time">
+        <div>
+          <img src="~/static/icon-calendar.svg" />
+          <p class="listing__content--date">{{ date }}</p>
+        </div>
+        <div>
+          <img src="~/static/icon-clock.svg" />
+          <p class="listing__content--time">{{ time }}</p>
+        </div>
+      </div>
+      <h3 class="listing__content--subheading">Categories:</h3>
+      <p class="listing__content--category">{{ category }}</p>
+      <h3 class="listing__content--subheading">Description:</h3>
       <p class="listing__content--desc">{{ description }}</p>
+      <a :href="`${directionsLink}`" target="_blank" class="btn-directions"
+        >Get Directions</a
+      >
     </section>
   </div>
 </template>
@@ -20,9 +38,11 @@ export default {
       slug: this.$route.params,
       // I had to declare these beforehand so that they could be referenced in mounted()
       date: "",
+      time: "",
       address: "",
       category: "",
       description: "",
+      directionsLink: "",
     };
   },
   computed: {
@@ -38,145 +58,96 @@ export default {
     // Set data points based on the information that was pulled above in currentListing
     // [0] is used to reference the first object (listing) as it is unnamed when filtered like this
     this.date = currentListing[0].date;
+    this.time = currentListing[0].time;
     this.address = currentListing[0].address;
     this.category = currentListing[0].category;
     this.description = currentListing[0].description;
+    this.directionsLink = currentListing[0].directionsLink;
 
     console.log(this.$route.params.id);
   },
 };
 </script>
 
-<style lang="scss">
-section {
-  padding: 1rem;
-}
+<style lang="scss" scoped>
+.hero {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: url("~static/hero-img.jpg"), rgba(255, 255, 255, 0.7);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  padding: 2rem 0;
 
-.section__title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #080808;
-  text-align: left;
-  // border-left: .25rem solid #1D3557;
-  // padding-left: .5rem;
-  margin: -0.5rem 0;
-}
+  &__wrapper {
+    padding: 1rem;
 
-.listing {
-  &__hero {
-    height: 35vh;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-
-  &__button {
-    display: inline-block;
-    background: #1d3557;
-    color: #ffffff;
-    text-align: center;
-    padding: 0.5rem 1rem;
-    margin: 0 1rem 1rem 0;
-    border-radius: 0.5rem;
-    border: none;
-    text-decoration: none;
-
-    h2 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    a {
-      color: #ffffff;
-      text-decoration: none;
+    &--title {
+      font-size: 1.8rem;
+      font-weight: 500;
+      max-width: 20ch;
+      margin: 0;
     }
 
     span {
-      font-size: 0.8rem;
+      display: block;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.btn-directions {
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #1d3557;
+  color: #fff;
+  border: none;
+  font-weight: 600;
+
+  &:focus,
+  &:hover {
+    background: rgba(29, 54, 88, 0.85);
+  }
+}
+
+.listing {
+  padding: 1.5rem 1rem;
+
+  .date-time {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .date-time > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    &:first-of-type {
+      margin-right: 1.5rem;
     }
   }
 
   &__content {
     padding: 1rem;
     margin-top: -80px;
-    // text-align: center;
 
-    &--logo-wrapper {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    &--subheading {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin: 0;
     }
 
-    &--logo {
-      background: #ffffff;
-      width: auto;
-      max-width: 80%;
-      height: 160px;
-      padding: 1rem;
-      border-radius: 1rem;
-      margin: 0 auto;
-    }
-
-    &--address {
-      font-size: 1.8rem;
-      font-weight: 500;
-      text-transform: capitalize;
-    }
-
-    .listing__contact--wrapper {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(50%, 1fr));
-
-      .listing__button {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
-    .listing__onlineorder--wrapper {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        padding: 1rem;
-
-        img {
-          width: 100%;
-          max-width: 150px;
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 769px) {
-  .section__title {
-    font-size: 1.25rem;
-  }
-
-  .listing__contact--wrapper,
-  .listing__onlineorder--wrapper {
-    grid-template-columns: repeat(3, 1fr) !important;
-    padding: 2rem 0;
-  }
-
-  .listing__contact--wrapper {
-    .listing__button {
-      margin-bottom: 0;
-    }
-  }
-
-  .listing__onlineorder--wrapper {
-    img {
-      max-width: 150px !important;
+    &--category, &--desc {
+      margin: .5rem 0 1.5rem 0;
     }
   }
 }

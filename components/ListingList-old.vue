@@ -16,61 +16,17 @@
         Holiday Items
       </button>
     </div>
+    <h1 class="listingList__title">Upcoming Yard Sales</h1>
     <!-- <p>{{ filteredList }}</p> -->
-    <!-- FILTERED LISTING(S) -->
     <ul v-if="filteredListVisible">
       <li v-for="listing in filteredList" :key="listing.address">
-        <div class="listingList__item">
-          <div>
-            <div class="listingList__item--content-date">
-              <div>
-                <img src="~/static/icon-calendar.svg" />
-                {{ listing.date }}
-              </div>
-              <div>
-                <img src="~/static/icon-clock.svg" />
-                {{ listing.time }}
-              </div>
-            </div>
-            <div class="listingList__item--content-title">
-              {{ listing.address }}
-            </div>
-            <div class="listingList__item--content-category">
-              {{ listing.category }}
-            </div>
-            <div class="listingList__item--content-desc">
-              {{ listing.description }}
-            </div>
-            <div class="listingList__item--button-wrapper">
-              <NuxtLink class="btn-view" :to="`/listing/${listing.address}`"
-                >View Listing</NuxtLink
-              >
-              <a
-                class="btn-directions"
-                :href="`${listing.directionsLink}`"
-                target="_blank"
-                >Get Directions</a
-              >
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <!-- LISTINGS -->
-    <ul v-else>
-      <li v-for="listing in listings" :key="listing.address">
-        <div class="listingList__item">
+        <NuxtLink class="listingList__item" :to="`/listing/${listing.address}`">
           <div class="listingList__item--content">
             <div class="listingList__item--content-date">
-              <div>
-                <img src="~/static/icon-calendar.svg" />
-                {{ listing.date }}
-              </div>
-              <div>
-                <img src="~/static/icon-clock.svg" />
-                {{ listing.time }}
-              </div>
+              {{ listing.date }}
             </div>
+          </div>
+          <div>
             <div class="listingList__item--content-title">
               {{ listing.address }}
             </div>
@@ -80,19 +36,31 @@
             <div class="listingList__item--content-desc">
               {{ listing.description }}
             </div>
-            <div class="listingList__item--button-wrapper">
-              <NuxtLink class="btn-view" :to="`/listing/${listing.address}`"
-                >View Listing</NuxtLink
-              >
-              <a
-                class="btn-directions"
-                :href="`${listing.directionsLink}`"
-                target="_blank"
-                >Get Directions</a
-              >
+          </div>
+        </NuxtLink>
+      </li>
+    </ul>
+    <!-- LIST -->
+    <ul v-else>
+      <li v-for="listing in listings" :key="listing.address">
+        <NuxtLink class="listingList__item" :to="`/listing/${listing.address}`">
+          <div class="listingList__item--content">
+            <div class="listingList__item--content-date">
+              {{ listing.date }}
             </div>
           </div>
-        </div>
+          <div class="listingList__item--content">
+            <div class="listingList__item--content-title">
+              {{ listing.address }}
+            </div>
+            <div class="listingList__item--content-category">
+              {{ listing.category }}
+            </div>
+            <div class="listingList__item--content-desc">
+              {{ listing.description }}
+            </div>
+          </div>
+        </NuxtLink>
       </li>
     </ul>
   </div>
@@ -110,7 +78,7 @@ export default {
   },
   methods: {
     filterListings(e) {
-      // console.log("Filtering for:", e.target.value);
+      console.log("Filtering for:", e.target.value);
       // Filters listings if the value of the button equals the listing's category
       const filtered = this.listings.filter((listing) =>
         // *** Eventually add RegEx to highlight filtered category
@@ -121,7 +89,7 @@ export default {
     },
     filterListClear() {
       this.filteredListVisible = false;
-    },
+    }
   },
   computed: {
     // Pull information from the store
@@ -135,6 +103,15 @@ export default {
 <style lang="scss">
 .listingList {
   padding: 1.5rem 1rem;
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #080808;
+    margin-bottom: 1rem;
+    border-left: 0.25rem solid #1d3557;
+    padding-left: 0.5rem;
+  }
 
   &__filters {
     margin-bottom: 0.5rem;
@@ -165,23 +142,17 @@ export default {
     padding: 0;
 
     li {
-      background: #fafafa;
-      border-radius: 1rem;
-      box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.1);
+      background: #efefef;
     }
 
     li:nth-of-type(even) {
-      background: #e7e7e7;
+      background: #dbdbdb;
     }
 
     .listingList__item {
-      // display: grid;
-      // grid-template-columns: 0.55fr 1fr;
-      // gap: 1rem;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 1rem;
-
+      display: grid;
+      grid-template-columns: 0.2fr 1fr;
+      gap: 1rem;
       padding: 1rem;
       text-decoration: none;
       border-bottom: 1px solid rgba(8, 8, 8, 0.1);
@@ -193,37 +164,10 @@ export default {
       }
 
       &--content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-
         &-date {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          width: 100%;
-          justify-content: space-between;
-          // gap: 1.5rem;
           font-size: 1rem;
           font-weight: 500;
           color: #080808;
-          margin-bottom: 1rem;
-
-          > div {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 0.5rem;
-
-            &:first-of-type {
-              margin-right: 1.5rem;
-            }
-          }
-
-          // &::before {
-          //   content: '[icon]';
-          // }
         }
 
         &-title {
@@ -243,45 +187,9 @@ export default {
         }
 
         &-desc {
-          font-size: 1rem;
+          font-size: 0.85rem;
           font-weight: 500;
           color: #080808;
-        }
-      }
-
-      &--button-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin-top: 1.5rem;
-
-        a {
-          margin-right: 1rem;
-          border-radius: 0.75rem;
-          padding: 0.75rem 1rem;
-          font-weight: 600;
-        }
-
-        .btn-view {
-          background: #1d3557;
-          color: #fff;
-          border: none;
-
-          &:focus,
-          &:hover {
-            background: rgba(29, 54, 88, 0.85);
-          }
-        }
-
-        .btn-directions {
-          background: transparent;
-          color: #080808;
-          border: 1px solid #080808;
-
-          &:focus,
-          &:hover {
-            background: rgba(8, 8, 8, 0.05);
-          }
         }
       }
     }
