@@ -17,7 +17,7 @@ export const state = () => ({
       category: "Toys, Video Games",
       directionsLink: "https://google.com",
       description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+        "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     {
       date: "June 05",
@@ -26,7 +26,7 @@ export const state = () => ({
       category: "Clothing, Holiday Items",
       directionsLink: "https://google.com",
       description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
     },
     {
       date: "June 07",
@@ -35,43 +35,43 @@ export const state = () => ({
       category: "Pet Supplies",
       directionsLink: "https://google.com",
       description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+        "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
     },
     {
       date: "June 11",
       time: "12pm - 5:30pm",
-      address: "address 6",
+      address: "address 5",
       category: "Trading Cards",
       directionsLink: "https://google.com",
       description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+        "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
     },
     {
       date: "June 13",
       time: "9am - 5pm",
-      address: "address 7",
+      address: "address 6",
       category: "Video Games",
       directionsLink: "https://google.com",
       description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+        "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
     },
     {
       date: "June 15",
       time: "5am - 11am",
-      address: "address 8",
+      address: "address 7",
       category: "Holiday Items",
       directionsLink: "https://google.com",
       description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+        "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
     },
     {
       date: "September 09",
       time: "7:30am - 2pm",
-      address: "address 5",
+      address: "address 8",
       category: "Collectibles, Trading Cards",
       directionsLink: "https://google.com",
       description:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
     },
   ],
 });
