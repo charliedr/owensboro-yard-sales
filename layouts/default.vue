@@ -1,6 +1,7 @@
 <template>
   <div>
     <Navbar />
+    <!-- body-content keeps the footer at the bottom of the screen -->
     <div class="body-content">
       <nuxt />
       <Footer />

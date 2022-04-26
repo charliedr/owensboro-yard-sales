@@ -16,7 +16,14 @@
         Holiday Items
       </button>
     </div>
-    <!-- <p>{{ filteredList }}</p> -->
+    <!-- Shows total # of listings on load -->
+    <span v-if="!filteredListVisible"
+      ><i>Total listings: {{ listings.length }}</i></span
+    >
+    <!-- Shows total # of filtered listings after clicking a filter -->
+    <span v-if="filteredListVisible"
+      ><i>Total listings: {{ filteredCount }}</i></span
+    >
     <!-- FILTERED LISTING(S) -->
     <ul v-if="filteredListVisible">
       <li v-for="listing in filteredList" :key="listing.address">
@@ -106,21 +113,26 @@ export default {
     return {
       filteredList: [],
       filteredListVisible: false,
+      filteredCount: 0,
     };
   },
   methods: {
     filterListings(e) {
       // console.log("Filtering for:", e.target.value);
       // Filters listings if the value of the button equals the listing's category
-      // Eventually allow users to select multiple categories
+      // ***** Eventually allow users to select multiple categories
+      // ***** Look into including only available categories using getters
       const filtered = this.listings.filter((listing) =>
         listing.category.includes(e.target.value)
       );
+      // Update filteredCount to display the total # of listings
+      this.filteredCount = filtered.length;
       this.filteredList = filtered;
       this.filteredListVisible = true;
     },
     filterListClear() {
       this.filteredListVisible = false;
+      this.filteredCount = this.listings.length;
     },
   },
   computed: {
@@ -134,7 +146,7 @@ export default {
 
 <style lang="scss">
 .listingList {
-  padding: 1.5rem 1rem;
+  padding: 1rem 1rem 1.5rem;
 
   &__filters {
     margin-bottom: 0.5rem;
@@ -171,9 +183,9 @@ export default {
       box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.1);
     }
 
-    li:nth-of-type(even) {
-      background: #e7e7e7;
-    }
+    // li:nth-of-type(even) {
+    //   background: #e7e7e7;
+    // }
 
     .listingList__item {
       // display: grid;
@@ -262,7 +274,7 @@ export default {
           padding: 0.75rem 1rem;
           font-weight: 600;
           width: 50%;
-          
+
           &:first-of-type {
             margin-right: 1rem;
           }
