@@ -42,6 +42,7 @@ export default {
   background-repeat: no-repeat;
   background-blend-mode: overlay;
   padding: 2rem 0;
+  margin-top: 52px;
 
   &__wrapper {
     padding: 1rem;

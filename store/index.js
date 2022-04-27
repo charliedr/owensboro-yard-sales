@@ -1,5 +1,6 @@
 export const state = () => ({
   // Manually adding these for now, will eventually connect to Google Sheets API to pull in Google Forms submissions
+  // Add getter to loop through listings and create an array of current categories
   listings: [
     {
       date: "June 1st",

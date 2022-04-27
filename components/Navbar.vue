@@ -17,7 +17,9 @@ export default {};
 
 <style>
 .navbar {
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 99;
   width: 100%;
   background: #1d3557;
   color: #ffffff;
