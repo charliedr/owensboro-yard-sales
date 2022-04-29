@@ -3,7 +3,6 @@
     <!-- FILTERING -->
     <div class="listingList__filters">
       <!-- <button @click="filterListClear">All</button> -->
-      Clear Filters
 
       <button @click="filterListings" value="Electronics">Electronics</button>
       <button @click="filterListings" value="Toys">Toys</button>
@@ -17,11 +16,9 @@
       <button @click="filterListings" value="Holiday Items">
         Holiday Items
       </button>
-      <button
-        v-if="filteredListVisible"
-        @click="filterListClear"
-        class=""
-      ></button>
+      <button v-if="filteredListVisible" @click="filterListClear" class="">
+        Clear Filters
+      </button>
     </div>
     <!-- Shows total # of listings on load -->
     <span v-if="!filteredListVisible"
