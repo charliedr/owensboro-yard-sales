@@ -17,6 +17,7 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
+    "@nuxt/image": "^0.6.2",
     "@nuxtjs/svg": "^0.4.0",
     "sass": "^1.49.11",
     "sass-loader": "^10.2.1"

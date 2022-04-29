@@ -23,6 +23,7 @@ export default {};
   width: 100%;
   background: #1d3557;
   color: #ffffff;
+  box-shadow: 0 .25rem .5rem rgba(0,0,0,.35);
 }
 
 .navbar__wrapper {

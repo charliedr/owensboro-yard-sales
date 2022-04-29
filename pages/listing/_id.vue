@@ -19,11 +19,25 @@
       </div>
       <h3 class="listing__content--subheading">Categories:</h3>
       <p class="listing__content--category">{{ category }}</p>
-      <h3 class="listing__content--subheading">Description:</h3>
-      <p class="listing__content--desc">{{ description }}</p>
+      <h3 v-if="description" class="listing__content--subheading">Description:</h3>
+      <p v-if="description" class="listing__content--desc">{{ description }}</p>
       <a :href="`${directionsLink}`" target="_blank" class="btn-directions"
         >Get Directions</a
       >
+      <!-- <div class="listing__content--image-wrapper">
+        <nuxt-img
+          format="webp"
+          quality="50"
+          src="test-1.jpg"
+          class="listing__content--image"
+        />
+        <nuxt-img
+          format="webp"
+          quality="50"
+          src="test-2.jpg"
+          class="listing__content--image"
+        />
+      </div> -->
     </section>
   </div>
 </template>
@@ -76,7 +90,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  background: url("~static/hero-img.jpg"), rgba(255, 255, 255, 0.7);
+  background: url("~static/owensboro-bridge.jpg"), rgba(255, 255, 255, 0.7);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -118,10 +132,6 @@ export default {
   padding: 1.5rem 1rem;
 
   .date-time {
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
-    // justify-content: space-around;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
@@ -148,8 +158,23 @@ export default {
       margin: 0;
     }
 
-    &--category, &--desc {
-      margin: .5rem 0 1.5rem 0;
+    &--category,
+    &--desc {
+      margin: 0.5rem 0 1.5rem 0;
+    }
+
+    &--image-wrapper {
+      margin-top: 2rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+
+      > img {
+        width: 100%;
+        border-radius: 1rem;
+        aspect-ratio: 1 / 1;
+      }
     }
   }
 }

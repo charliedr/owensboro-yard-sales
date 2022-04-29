@@ -3,7 +3,7 @@ export const state = () => ({
   // Add getter to loop through listings and create an array of current categories
   listings: [
     {
-      date: "June 1st",
+      date: "June 1-3",
       time: "7am - 2pm",
       address: "P. Sherman, 42 Wallaby Way",
       category: "Electronics, Toys, Holiday Items, Trading Cards, Clothing, Pet Supplies",

@@ -2,8 +2,10 @@
   <div class="listingList">
     <!-- FILTERING -->
     <div class="listingList__filters">
-      <button @click="filterListClear">All</button>
-      <button @click="filterListings" value="Clothing">Electronics</button>
+      <!-- <button @click="filterListClear">All</button> -->
+      Clear Filters
+
+      <button @click="filterListings" value="Electronics">Electronics</button>
       <button @click="filterListings" value="Toys">Toys</button>
       <button @click="filterListings" value="Clothing">Clothing</button>
       <button @click="filterListings" value="Video Games">Video Games</button>
@@ -15,6 +17,11 @@
       <button @click="filterListings" value="Holiday Items">
         Holiday Items
       </button>
+      <button
+        v-if="filteredListVisible"
+        @click="filterListClear"
+        class=""
+      ></button>
     </div>
     <!-- Shows total # of listings on load -->
     <span v-if="!filteredListVisible"
@@ -112,16 +119,26 @@ export default {
   data() {
     return {
       filteredList: [],
+      activeFilters: [],
       filteredListVisible: false,
       filteredCount: 0,
     };
   },
   methods: {
     filterListings(e) {
-      // console.log("Filtering for:", e.target.value);
       // Filters listings if the value of the button equals the listing's category
       // ***** Eventually allow users to select multiple categories
-      // ***** Look into including only available categories using getters
+      // ***** Look into including only available categories using vuex getters
+
+      // Pushes clicked filters' values to the activeFilters array
+      // Prevents duplicate filters from being added
+      if (!this.activeFilters.includes(e.target.value)) {
+        this.activeFilters.push(e.target.value);
+        console.log(this.activeFilters);
+      } else {
+        console.log("activeFilters already contains: " + this.activeFilters);
+      }
+
       const filtered = this.listings.filter((listing) =>
         listing.category.includes(e.target.value)
       );
@@ -131,6 +148,8 @@ export default {
       this.filteredListVisible = true;
     },
     filterListClear() {
+      // Reset the activeFilters array
+      this.activeFilters = [];
       this.filteredListVisible = false;
       this.filteredCount = this.listings.length;
     },
@@ -168,6 +187,15 @@ export default {
         cursor: pointer;
         background: #1d3557;
         color: #ffffff;
+      }
+    }
+
+    .clear-filters {
+      background: rgb(180, 0, 0) !important;
+      color: #ffffff;
+
+      &::before {
+        content: "\2715";
       }
     }
   }

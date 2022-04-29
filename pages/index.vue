@@ -36,7 +36,7 @@ export default {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  background: url("~static/hero-img.jpg"), rgba(255, 255, 255, 0.7);
+  background: url("~static/owensboro-bridge.jpg"), rgba(255, 255, 255, 0.7);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
