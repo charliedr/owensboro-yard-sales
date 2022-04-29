@@ -3,7 +3,6 @@
     <!-- FILTERING -->
     <div class="listingList__filters">
       <!-- <button @click="filterListClear">All</button> -->
-
       <button @click="filterListings" value="Electronics">Electronics</button>
       <button @click="filterListings" value="Toys">Toys</button>
       <button @click="filterListings" value="Clothing">Clothing</button>
@@ -16,7 +15,7 @@
       <button @click="filterListings" value="Holiday Items">
         Holiday Items
       </button>
-      <button v-if="filteredListVisible" @click="filterListClear" class="">
+      <button v-if="filteredListVisible" @click="filterListClear" class="clear-filters">
         Clear Filters
       </button>
     </div>
