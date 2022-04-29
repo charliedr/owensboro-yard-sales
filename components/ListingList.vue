@@ -27,6 +27,7 @@
     <span v-if="filteredListVisible"
       ><i>Total listings: {{ filteredCount }}</i></span
     >
+    <!-- ***** Eventually combined the filtered/unfiltered lists -->
     <!-- FILTERED LISTING(S) -->
     <ul v-if="filteredListVisible">
       <li v-for="listing in filteredList" :key="listing.address">
@@ -122,7 +123,6 @@ export default {
   },
   methods: {
     filterListings(e) {
-      // Filters listings if the value of the button equals the listing's category
       // ***** Eventually allow users to select multiple categories
       // ***** Look into including only available categories using vuex getters
 
@@ -132,7 +132,8 @@ export default {
         this.activeFilters.push(e.target.value);
         console.log(this.activeFilters);
       } else {
-        console.log("activeFilters already contains: " + this.activeFilters);
+        this.activeFilters.pop();
+        console.log("activeFilters already contains: " + e.target.value + ", removing selected filter.");
       }
 
       const filtered = this.listings.filter((listing) =>
@@ -187,8 +188,8 @@ export default {
     }
 
     .clear-filters {
-      background: rgb(180, 0, 0) !important;
-      color: #ffffff;
+      color: rgb(180, 0, 0);
+      font-weight: 600;
 
       &::before {
         content: "\2715";
