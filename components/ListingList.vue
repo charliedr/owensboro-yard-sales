@@ -208,7 +208,7 @@ export default {
     padding: 0;
 
     li {
-      background: #fafafa;
+      background: #f7f7f7;
       border-radius: 1rem;
       box-shadow: 0 0.5rem 0.75rem rgba(0, 0, 0, 0.1);
     }

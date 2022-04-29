@@ -43,7 +43,7 @@ export default {};
       color: #ffffff;
       font-size: 20px;
       line-height: 1;
-      font-weight: 500;
+      font-weight: 600;
     }
 
   }
