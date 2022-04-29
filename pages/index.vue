@@ -2,15 +2,17 @@
   <div>
     <section class="hero">
       <div class="hero__wrapper">
-        <h1 class="hero__wrapper--title">home page yeet</h1>
-        <span>Shift + Alt + F</span>
+        <h1 class="hero__wrapper--title">Owensboro Yard Sales</h1>
+        <!-- <span>Shift + Alt + F</span> -->
       </div>
     </section>
     <section class="cta-section">
       <h2 class="cta-section__title">
-        <span>Have a yard sale coming up?</span><br><span>Post it here!</span>
+        <span>Have a yard sale coming up?</span><br /><span>Post it here!</span>
       </h2>
-      <a class="cta-section__button" href="https://google.com" target="_blank">Submit Your Listing</a>
+      <a class="cta-section__button" href="https://google.com" target="_blank"
+        >Submit Your Listing</a
+      >
     </section>
     <div class="content">
       <h1 class="content__title">Upcoming Yard Sales</h1>
@@ -86,11 +88,12 @@ export default {
     background: #fff;
     color: #1d3557;
     font-weight: 600;
+    text-decoration: none;
   }
 }
 
 .content {
-    &__title {
+  &__title {
     font-size: 1.5rem;
     font-weight: 500;
     color: #080808;
@@ -113,10 +116,6 @@ export default {
       align-items: center;
       justify-content: center;
       flex-direction: column;
-
-      &--hashtag {
-        font-size: 1.5rem;
-      }
 
       &--title {
         font-size: 2.5rem;

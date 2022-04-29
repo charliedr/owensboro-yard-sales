@@ -2,11 +2,12 @@
   <header class="navbar">
     <div class="navbar__wrapper container">
       <NuxtLink to="/" exact>
-        <span class="logo">logo</span>
+        <span class="logo">OYS</span>
       </NuxtLink>
-      <NuxtLink to="/">
-        Submit Your Listing
-      </NuxtLink>
+      <div class="navbar__links">
+        <NuxtLink to="/about"> About </NuxtLink>
+        <NuxtLink to="/"> Submit Your Listing </NuxtLink>
+      </div>
     </div>
   </header>
 </template>
@@ -15,7 +16,7 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss">
 .navbar {
   position: fixed;
   top: 0;
@@ -23,47 +24,39 @@ export default {};
   width: 100%;
   background: #1d3557;
   color: #ffffff;
-  box-shadow: 0 .25rem .5rem rgba(0,0,0,.35);
-}
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.35);
 
-.navbar__wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-}
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
 
-a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-}
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+    .logo {
+      color: #ffffff;
+      font-size: 20px;
+      line-height: 1;
+      font-weight: 500;
+    }
 
-/* a:nth-of-type(2) {
-  height: 32px;
-} */
+  }
 
-.logo {
-  color: #ffffff;
-  font-size: 20px;
-  line-height: 1;
-  font-weight: 500;
-}
-
-a {
-  font-size: .85rem;
-  font-weight: normal;
-  color: #ffffff;
-}
-
-@media (min-width: 769px) {
-}
-
-@media (min-width: 1020px) {
-}
-
-@media (min-width: 1200px) {
+  &__links {
+    display: flex;
+    
+    a {
+      font-size: 0.85rem;
+      font-weight: normal;
+      color: #ffffff;
+      margin-left: 1rem;
+    }
+  }
 }
 </style>

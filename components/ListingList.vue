@@ -3,6 +3,7 @@
     <!-- FILTERING -->
     <div class="listingList__filters">
       <!-- <button @click="filterListClear">All</button> -->
+      <button @click="filterListings" value="Baby Supplies">Baby Supplies</button>
       <button @click="filterListings" value="Electronics">Electronics</button>
       <button @click="filterListings" value="Toys">Toys</button>
       <button @click="filterListings" value="Clothing">Clothing</button>
@@ -15,7 +16,11 @@
       <button @click="filterListings" value="Holiday Items">
         Holiday Items
       </button>
-      <button v-if="filteredListVisible" @click="filterListClear" class="clear-filters">
+      <button
+        v-if="filteredListVisible"
+        @click="filterListClear"
+        class="clear-filters"
+      >
         Clear Filters
       </button>
     </div>
@@ -130,10 +135,10 @@ export default {
       // Prevents duplicate filters from being added
       if (!this.activeFilters.includes(e.target.value)) {
         this.activeFilters.push(e.target.value);
-        console.log(this.activeFilters);
+        // console.log(this.activeFilters);
       } else {
         this.activeFilters.pop();
-        console.log("activeFilters already contains: " + e.target.value + ", removing selected filter.");
+        // console.log("activeFilters already contains: " + e.target.value + ", removing selected filter.");
       }
 
       const filtered = this.listings.filter((listing) =>
@@ -295,6 +300,8 @@ export default {
         width: 100%;
 
         a {
+          text-align: center;
+          text-decoration: none;
           border-radius: 0.75rem;
           padding: 0.75rem 1rem;
           font-weight: 600;

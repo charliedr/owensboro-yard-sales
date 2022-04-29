@@ -19,7 +19,9 @@
       </div>
       <h3 class="listing__content--subheading">Categories:</h3>
       <p class="listing__content--category">{{ category }}</p>
-      <h3 v-if="description" class="listing__content--subheading">Description:</h3>
+      <h3 v-if="description" class="listing__content--subheading">
+        Description:
+      </h3>
       <p v-if="description" class="listing__content--desc">{{ description }}</p>
       <a :href="`${directionsLink}`" target="_blank" class="btn-directions"
         >Get Directions</a
@@ -115,6 +117,12 @@ export default {
 }
 
 .btn-directions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
   background: #1d3557;
@@ -158,9 +166,11 @@ export default {
       margin: 0;
     }
 
-    &--category,
-    &--desc {
+    &--category {
       margin: 0.5rem 0 1.5rem 0;
+    }
+    &--desc {
+      margin: 0.5rem 0 2.5rem 0;
     }
 
     &--image-wrapper {

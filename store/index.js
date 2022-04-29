@@ -6,7 +6,7 @@ export const state = () => ({
       date: "June 1-3",
       time: "7am - 2pm",
       address: "P. Sherman, 42 Wallaby Way",
-      category: "Electronics, Toys, Holiday Items, Trading Cards, Clothing, Pet Supplies",
+      category: "Baby Supplies, Electronics, Toys, Holiday Items, Trading Cards, Clothing, Pet Supplies",
       directionsLink: "https://www.google.com/maps/dir//42+Rock+Wallaby+Way,+Blaxland+NSW+2774,+Australia/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x6b12883f97111b4b:0x72042424009f2705?sa=X&ved=2ahUKEwjM_pei-KH3AhVNVd8KHc58B7gQwwV6BAg8EAM",
       description:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
