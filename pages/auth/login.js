@@ -30,7 +30,7 @@ export default function Login() {
   }, [user]);
 
   return (
-    <div className="shadow-xl mt-32 p-8 text-gray-700 rounded-lg bg-gray">
+    <div className="shadow-xl mt-6 p-8 text-gray-700 rounded-lg bg-gray">
       <h2 className="text-2xl font-medium">Join Today</h2>
       <h3 className="pt-2 pb-6">Sign in with one of the providers below:</h3>
       <button
