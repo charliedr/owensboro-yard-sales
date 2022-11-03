@@ -11,7 +11,7 @@ export default function Header() {
       <div className="h-full py-16 px-6 flex justify-between items-center bg-white bg-opacity-80">
         <Link href="/">
           <img
-            src="oys_logo.svg"
+            src="../oys_logo.svg"
             alt="Owensboro Yard Sales"
             className="w-36"
           ></img>
