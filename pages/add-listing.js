@@ -97,7 +97,7 @@ export default function AddListing() {
           ? "Edit your listing"
           : "Add Your Yard Sale"}
       </h1>
-      <p className="text-xs mt-1 mb-6">
+      <p className="text-sm mt-1 mb-6">
         We reserve the right to remove your post should it contain content
         violating our{" "}
         <Link href="/" target="_blank" className="underline">
@@ -146,7 +146,7 @@ export default function AddListing() {
                 onChange={(e) =>
                   setListing({ ...listing, startDate: e.target.value })
                 }
-                className="text-sm mb-2 p-2 font-medium bg-gray"
+                className="text-md mb-2 p-2 font-medium bg-gray"
               ></input>
             </div>
 
@@ -161,7 +161,7 @@ export default function AddListing() {
                 onChange={(e) =>
                   setListing({ ...listing, endDate: e.target.value })
                 }
-                className="text-sm mb-2 p-2 font-medium bg-gray"
+                className="text-md mb-2 p-2 font-medium bg-gray"
               ></input>
             </div>
           </div>
