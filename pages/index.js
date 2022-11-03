@@ -23,8 +23,8 @@ export default function Home() {
     const unsubscribe = onSnapshot(q, (snapshot) => {
       setAllListings(
         snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-      );
-    });
+        );
+      });
     return unsubscribe;
   };
 
