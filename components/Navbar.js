@@ -12,7 +12,7 @@ export default function Navbar() {
     <div>
       {!user}
       {user && (
-        <nav className="w-full fixed z-50 bottom-0 flex justify-evenly pt-3 pb-2 bg-white shadow-inner">
+        <nav className="w-full fixed z-50 bottom-0 grid grid-cols-3 pt-3 pb-2 bg-white shadow-inner">
           <Link href="/" className="flex flex-col">
             <FaSign className="text-xl self-center mb-1 text-blue" />
             <span className="text-sm font-medium">Yard Sales</span>
